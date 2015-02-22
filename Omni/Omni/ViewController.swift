@@ -8,19 +8,20 @@
 
 import UIKit
 import CoreLocation
+import Foundation
+import MessageUI
 
 class ViewController: UIViewController, CLLocationManagerDelegate {
+    let messageComposer = MessageComposer()
     let locationManager = CLLocationManager()
-    
+   
     // Your name:
     @IBOutlet weak var user_name: UILabel!
     @IBOutlet weak var user_name_text: UITextField!
-    var name = ""
-    
+   
     //Emergency Contact Name
     @IBOutlet weak var contact_name_label: UILabel!
     @IBOutlet weak var contact_name_label_text: UITextField!
-    var contact_name = ""
     
     //Emergency Contact Phone #
     @IBOutlet weak var contact_phone_label: UILabel!
@@ -29,7 +30,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        AppCommunication.sharedInstance.sharedString = "changed"
         self.locationManager.delegate = self
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
         self.locationManager.requestWhenInUseAuthorization()
@@ -62,10 +63,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     func displayLocationInfo(placemark: CLPlacemark) {
         self.locationManager.stopUpdatingLocation()
-        println(placemark.locality)
-        println(placemark.postalCode)
-        println(placemark.administrativeArea)
-        println(placemark.country)
+        
+        AppCommunication.sharedInstance.location = placemark.locality + ", " + placemark.administrativeArea + ", " + placemark.country + " (" + placemark.postalCode + ")"
+        
+        println(AppCommunication.sharedInstance.location)
     }
     
     func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
@@ -74,14 +75,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     //Submit button
     @IBAction func submit(sender: AnyObject) {
-        name = user_name_text.text
-        contact_name = contact_name_label_text.text
-        contact_phone = contact_phone_text.text
-        println(name)
-        println(contact_name)
+        AppCommunication.sharedInstance.name = user_name_text.text
+        AppCommunication.sharedInstance.contact_name = contact_name_label_text.text
+        AppCommunication.sharedInstance.contact_phone = contact_phone_text.text
+        println(AppCommunication.sharedInstance.name)
+        println(AppCommunication.sharedInstance.contact_name)
         println(contact_phone)
     }
-    
     
 }
 

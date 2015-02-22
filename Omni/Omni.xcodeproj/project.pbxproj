@@ -13,7 +13,9 @@
 		42289EF71A9A2EE9005D80E2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42289EF61A9A2EE9005D80E2 /* Images.xcassets */; };
 		42289EFA1A9A2EE9005D80E2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42289EF81A9A2EE9005D80E2 /* LaunchScreen.xib */; };
 		42289F061A9A2EE9005D80E2 /* OmniTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42289F051A9A2EE9005D80E2 /* OmniTests.swift */; };
-		42289F101A9A555D005D80E2 /* dashboardInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42289F0F1A9A555D005D80E2 /* dashboardInterface.swift */; };
+		429F80191A9A77330007D234 /* MessageComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429F80181A9A77330007D234 /* MessageComposer.swift */; };
+		429F801B1A9A78EB0007D234 /* SendMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429F801A1A9A78EB0007D234 /* SendMessageViewController.swift */; };
+		429F801D1A9A7CA10007D234 /* AppCommunication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429F801C1A9A7CA10007D234 /* AppCommunication.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,14 +32,16 @@
 		42289EEA1A9A2EE9005D80E2 /* Omni.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Omni.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42289EEE1A9A2EE9005D80E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42289EEF1A9A2EE9005D80E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		42289EF11A9A2EE9005D80E2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		42289EF11A9A2EE9005D80E2 /* ViewController.swift */ = {isa = PBXFileReference; indentWidth = 3; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		42289EF41A9A2EE9005D80E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		42289EF61A9A2EE9005D80E2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		42289EF91A9A2EE9005D80E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		42289EFF1A9A2EE9005D80E2 /* OmniTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OmniTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		42289F041A9A2EE9005D80E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42289F051A9A2EE9005D80E2 /* OmniTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OmniTests.swift; sourceTree = "<group>"; };
-		42289F0F1A9A555D005D80E2 /* dashboardInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dashboardInterface.swift; sourceTree = "<group>"; };
+		429F80181A9A77330007D234 /* MessageComposer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageComposer.swift; sourceTree = "<group>"; };
+		429F801A1A9A78EB0007D234 /* SendMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendMessageViewController.swift; sourceTree = "<group>"; };
+		429F801C1A9A7CA10007D234 /* AppCommunication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCommunication.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,10 +86,12 @@
 				42289EEF1A9A2EE9005D80E2 /* AppDelegate.swift */,
 				42289EF11A9A2EE9005D80E2 /* ViewController.swift */,
 				42289EF31A9A2EE9005D80E2 /* Main.storyboard */,
-				42289F0F1A9A555D005D80E2 /* dashboardInterface.swift */,
+				429F801A1A9A78EB0007D234 /* SendMessageViewController.swift */,
 				42289EF61A9A2EE9005D80E2 /* Images.xcassets */,
 				42289EF81A9A2EE9005D80E2 /* LaunchScreen.xib */,
 				42289EED1A9A2EE9005D80E2 /* Supporting Files */,
+				429F80181A9A77330007D234 /* MessageComposer.swift */,
+				429F801C1A9A7CA10007D234 /* AppCommunication.swift */,
 			);
 			path = Omni;
 			sourceTree = "<group>";
@@ -215,8 +221,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				42289EF21A9A2EE9005D80E2 /* ViewController.swift in Sources */,
+				429F801B1A9A78EB0007D234 /* SendMessageViewController.swift in Sources */,
+				429F801D1A9A7CA10007D234 /* AppCommunication.swift in Sources */,
+				429F80191A9A77330007D234 /* MessageComposer.swift in Sources */,
 				42289EF01A9A2EE9005D80E2 /* AppDelegate.swift in Sources */,
-				42289F101A9A555D005D80E2 /* dashboardInterface.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,6 +416,7 @@
 				42289F0B1A9A2EE9005D80E2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		42289F0C1A9A2EE9005D80E2 /* Build configuration list for PBXNativeTarget "OmniTests" */ = {
 			isa = XCConfigurationList;
@@ -416,6 +425,7 @@
 				42289F0E1A9A2EE9005D80E2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

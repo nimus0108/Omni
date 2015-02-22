@@ -62,6 +62,7 @@
                                 </state>
                                 <connections>
                                     <action selector="submit:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="AJO-gj-L28"/>
+                                    <segue destination="1lv-yH-UKN" kind="push" id="Poj-aN-wfs"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -82,10 +83,10 @@
             </objects>
             <point key="canvasLocation" x="766" y="346"/>
         </scene>
-        <!--View Controller-->
+        <!--Send Message View Controller-->
         <scene sceneID="P36-zZ-Z9V">
             <objects>
-                <viewController id="1lv-yH-UKN" sceneMemberID="viewController">
+                <viewController id="1lv-yH-UKN" customClass="SendMessageViewController" customModule="Omni" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Asv-kF-keV"/>
                         <viewControllerLayoutGuide type="bottom" id="uBL-p4-lsq"/>
@@ -94,11 +95,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="egj-dn-KWg">
-                                <rect key="frame" x="109" y="188" width="102" height="30"/>
-                                <state key="normal" title="Send Message">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="egj-dn-KWg">
+                                <rect key="frame" x="43" y="179" width="235" height="164"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Send Message">
+                                            <attributes>
+                                                <font key="NSFont" size="24" name="HelveticaNeue-Bold"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
                                 </state>
+                                <connections>
+                                    <action selector="SendMessage:" destination="1lv-yH-UKN" eventType="touchUpInside" id="7Rm-oW-5u0"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -133,4 +143,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="YIT-6t-rFD"/>
+    </inferredMetricsTieBreakers>
 </document>
